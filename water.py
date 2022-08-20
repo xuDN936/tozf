@@ -16,7 +16,7 @@ app_secret = os.environ["APP_SECRET"]
 
 user_id = os.environ["USER_ID"]
 user_id2 = os.environ["USER_ID2"]
-template_id = os.environ["TEMPLATE_ID2"]
+template_id = os.environ["TEMPLATE_ID"]
 template_water = os.environ["TEMPLATE_WATER"]
 
 
