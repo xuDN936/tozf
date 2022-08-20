@@ -5,6 +5,7 @@ from wechatpy.client.api import WeChatMessage, WeChatTemplate
 import requests
 import os
 import random
+import datetime
 
 today = datetime.now()
 start_date = os.environ['START_DATE']
@@ -25,11 +26,11 @@ def get_weather():
   return weather['weather'], math.floor(weather['temp'])
 
 def get_count():
-  delta = today - datetime.strptime("2022-07-29", "%Y-%m-%d", errors='coerce')
+  delta = today - datetime.datetime.strptime("2022-07-29", "%Y-%m-%d")
   return delta.days
 
 def get_birthday():
-  next = datetime.strptime(str(date.today().year) + "-" + "06-22", "%Y-%m-%d", errors='coerce')
+  next = datetime.datetime.strptime(str(date.today().year) + "-" + "06-22", "%Y-%m-%d")
   if next < datetime.now():
     next = next.replace(year=next.year + 1)
   return (next - today).days
